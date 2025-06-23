@@ -1,0 +1,180 @@
+/* Modern Professional Company Details Form CSS */
+.company-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8fafc;
+}
+
+.company-details-card {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.company-details-card:hover {
+  transform: translateY(-5px);
+}
+
+.form-section {
+  flex: 1;
+  padding: 3rem;
+}
+
+.image-section {
+  flex: 1;
+  background: linear-gradient(135deg, #174867 0%, #26323e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.company-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #174867;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.company-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #174867;
+  box-shadow: 0 0 0 3px rgba(23, 72, 103, 0.1);
+  background-color: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  padding: 0.9rem;
+  background-color: #174867;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-button:hover {
+  background-color: #26323e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.has-error input, 
+.has-error textarea {
+  border-color: #ef4444;
+}
+
+.has-error input:focus, 
+.has-error textarea:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-details-card {
+    flex-direction: column;
+  }
+  
+  .form-section, .image-section {
+    padding: 2rem;
+  }
+  
+  .image-section {
+    order: -1;
+    padding-top: 2rem;
+    padding-bottom: 0;
+  }
+  
+  .company-image {
+    max-width: 300px;
+  }
+}

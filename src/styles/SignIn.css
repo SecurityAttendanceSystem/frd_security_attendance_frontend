@@ -1,0 +1,120 @@
+/* Full Page Layout */
+.sign-in-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f9fc;
+  background-image: url('https://i.pinimg.com/736x/f3/2a/84/f32a846a2a1068f6e344615baa9ddbf1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Company Sign In Button (Top Right) */
+.company-sign-in-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.company-sign-in-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Form container */
+.sign-in-form-wrapper {
+  background-color: #ffffff;
+  padding: 30px 55px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100rem;
+  max-width: 30rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Heading */
+.sign-in-heading {
+  font-size: 28px;
+  color: #0033cc;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Input Fields */
+.sign-in-form-input {
+  width: 400px;
+  padding: 12px 20px;
+  margin-top: 19px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sign-in-form-input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 255, 0.2);
+}
+
+/* Submit Button */
+.sign-in-submit-btn {
+  width: 400px;
+  padding: 14px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.sign-in-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  font-size: 12px;
+  margin-top: 15px;
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sign-in-form-wrapper {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .sign-in-heading {
+    font-size: 24px;
+  }
+
+  .company-sign-in-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

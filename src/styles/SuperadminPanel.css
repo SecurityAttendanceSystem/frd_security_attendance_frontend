@@ -1,0 +1,87 @@
+/* src/components/AdminPanel.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f5f6fa;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    margin-left: 250px; /* Adjust based on sidebar width */
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+  }
+  
+  .charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+  
+  .chart {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart h2 {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+  
+  .placeholder-chart {
+    height: 200px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-size: 16px;
+  }

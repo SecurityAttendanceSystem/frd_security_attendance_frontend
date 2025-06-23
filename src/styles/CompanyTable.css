@@ -1,0 +1,87 @@
+
+  
+  .company-table-container h2 {
+    margin-bottom: 20px;
+    color: #0033cc;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  /* Search Bar Styling */
+  .company-search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-inline-start: 100px;
+    margin-top: 40px; /* Reduced gap */
+    /* Test Comment */
+    
+  }
+  
+  .company-search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Table Styling */
+  .company-table {
+    width: 80%;
+    border-collapse: collapse;
+    background: white;
+    margin-inline-start: 100px;
+    margin-top: 20px; /* Reduced gap */
+  }
+  
+  .company-table th,
+  .company-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .company-table th {
+    background: #174867;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .company-table tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+  
+  .company-table tr:hover {
+    background: rgba(0, 123, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  /* No Results Found Message */
+  .no-results {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    color: red;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .company-table-container {
+      width: 95%;
+    }
+  
+    .company-search-input {
+      width: 100%;
+      
+    }
+  
+    .company-table th,
+    .company-table td {
+      padding: 8px;
+    }
+  }
+  

@@ -1,0 +1,81 @@
+
+  
+  /* Title */
+  .system-users-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .system-users-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-inline-start: 130px;
+    margin-top: 150px;
+  }
+  
+  .system-users-table th, .system-users-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .system-users-table th {
+    background-color: #174867;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Add New User Section */
+  .add-user-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .add-user-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .add-user-section button {
+    background-color: #001192;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .add-user-section button:hover {
+    background-color: #55e104;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  .error {
+    color: #d32f2f;
+    padding: 20px;
+    background-color: #ffebee;
+    border-radius: 4px;
+    margin: 20px;
+  }
+  
+  .submit-btn.loading {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .system-users-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  

@@ -1,0 +1,169 @@
+/* Modern Professional Styling with Original Colors */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Wrapper Styling */
+.background-wrapper {
+  background-image: url('../assets/slt-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(23, 72, 103, 0.85);
+  z-index: 0;
+}
+
+/* Card Styling */
+.role-selector-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.card-header {
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #174867;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #5a6f7c;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Form Styling */
+.role-selector-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Select Styling */
+.select-wrapper {
+  position: relative;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #174867;
+  background-color: white;
+  appearance: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  border-color: #26323e;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 50, 62, 0.1);
+}
+
+.form-select:disabled {
+  background-color: #f5f7fa;
+  cursor: not-allowed;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: #174867;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Button Styling */
+.form-button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #26323e;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.form-button:hover {
+  background-color: #174867;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-button:disabled {
+  background-color: #a3b1bd;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #26323e;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .role-selector-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+}

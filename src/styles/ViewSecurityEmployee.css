@@ -1,0 +1,83 @@
+/* Container Styling */
+.security-employee-table-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  /* Table Wrapper */
+  .security-employee-table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+  
+  /* Table Styling */
+  .security-employee-table {
+    width: 60rem;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styling */
+  .security-employee-table th {
+    background-color: #0e039f;
+    color: white;
+    text-transform: uppercase;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Table Row Styling */
+  .security-employee-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  /* Alternate Row Colors */
+  .security-employee-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+  }
+  
+  /* Hover Effect */
+  .security-employee-table tbody tr:hover {
+    background-color: #dfe6e9;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .security-employee-table-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .security-employee-table {
+      font-size: 14px;
+    }
+  
+    .security-employee-table th,
+    .security-employee-table td {
+      padding: 12px;
+    }
+  }
+  

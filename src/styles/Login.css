@@ -1,0 +1,342 @@
+.modern-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(100, 255, 218, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 255, 218, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(100, 255, 218, 0.8);
+  border-radius: 50%;
+  animation: float-up 15s infinite linear;
+  opacity: 0;
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.card-header h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
+}
+
+.card-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.logo {
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(100, 255, 218, 0.6);
+}
+
+.input-container label {
+  position: absolute;
+  left: 2.8rem;
+  top: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.85);
+  color: rgba(100, 255, 218, 0.8);
+  left: 1rem;
+  background: transparent;
+  padding: 0 0.3rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #3e98ff 0%, #2e7dff 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-btn .arrow {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.login-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.forgot-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: rgba(100, 255, 218, 0.8);
+}
+
+.version {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.modern-toast {
+  background: rgba(30, 30, 30, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+}
+
+.toast-progress {
+  background: linear-gradient(to right, #3e98ff, #2e7dff) !important;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Login Tabs */
+.login-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab.active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1890ff;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.login-option-btn {
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-option-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(100, 255, 218, 0.4);
+}
+
+.login-option-btn.secondary {
+  background: rgba(62, 152, 255, 0.1);
+  border-color: rgba(62, 152, 255, 0.2);
+}
+
+.login-option-btn.secondary:hover {
+  background: rgba(62, 152, 255, 0.15);
+}
+
+.option-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-option-btn h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.login-option-btn p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+/* Azure Login Button */
+/* Microsoft Login Styles */
+.microsoft-login-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.microsoft-login-btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 16px;
+  background-color: #2F2F2F;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.microsoft-login-btn:hover {
+  background-color: #3e3e3e;
+  transform: translateY(-1px);
+}
+
+.microsoft-login-btn:active {
+  transform: translateY(0);
+}
+
+.microsoft-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Loader styles */
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
