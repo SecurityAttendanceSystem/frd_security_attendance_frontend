@@ -41,7 +41,7 @@ const CompanyUserLogin = () => {
     try {
       const { email, password } = credentials;
       const response = await axios.post(
-        `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/companyUser/login`, 
+        `http://localhost:8080/api/companyUser/login`, 
         { userId: email, password }
       );
 

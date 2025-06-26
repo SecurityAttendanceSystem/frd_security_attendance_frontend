@@ -23,7 +23,7 @@ const AttendanceApprovalSection = () => {
   const fetchAttendanceRecords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/getAll`);
+      const response = await axios.get(`http://localhost:8080/api/attendance/getAll`);
       setAttendanceRecords(response.data);
       console.log('Fetched attendance records:', response.data);
     } catch (error) {
@@ -39,7 +39,7 @@ const AttendanceApprovalSection = () => {
     try {
       if (isApproved) {
         await axios.put(
-          `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/updateApprovalOfficer01/${recordId}`,
+          `http://localhost:8080/api/attendance/updateApprovalOfficer01/${recordId}`,
           'Approved',
           { headers: { 'Content-Type': 'text/plain' } }
         );
@@ -67,14 +67,14 @@ const AttendanceApprovalSection = () => {
     try {
       // First send the rejection with comment
       const rejectionResponse = await axios.put(
-        `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/approvalOfficer01Rejected/${rejectingRecord.id}`,
+        `http://localhost:8080/api/attendance/approvalOfficer01Rejected/${rejectingRecord.id}`,
         { comment: rejectionComment },
         { headers: { 'Content-Type': 'application/json' } }
       );
 
       // Then update the approval status
       await axios.put(
-        `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/updateApprovalOfficer01/${rejectingRecord.id}`,
+        `http://localhost:8080/api/attendance/updateApprovalOfficer01/${rejectingRecord.id}`,
         'Rejected',
         { headers: { 'Content-Type': 'text/plain' } }
       );

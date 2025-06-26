@@ -44,14 +44,14 @@ const AttendanceRecords = () => {
     try {
       setLoading(true);
       // Fetch company details for the logged-in company user
-      const response = await axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/companyUser/getCompanyUser/${userId}`);
+      const response = await axios.get(`http://localhost:8080/api/companyUser/getCompanyUser/${userId}`);
       const companyId = response.data.company.id;
       console.log(response.data)
       console.log(companyId)
       setCompanyId(companyId);
       
       // Fetch company name
-      const companyResponse = await axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/securityCompany/getCompany/${companyId}`);
+      const companyResponse = await axios.get(`http://localhost:8080/api/securityCompany/getCompany/${companyId}`);
       setCompanyName(companyResponse.data.companyName);
       console.log(companyResponse.data.companyName)
       console.log(companyResponse.data)
@@ -69,11 +69,11 @@ const AttendanceRecords = () => {
   const fetchAttendanceRecords = async (specificCompanyId = null) => {
     try {
       setLoading(true);
-      let url = `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/getAll`;
+      let url = `http://localhost:8080/api/attendance/getAll`;
       
       // If we're fetching for a specific company, use a different endpoint
       if (specificCompanyId) {
-        url = `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/getSpecificAttendanceByCompanyId/${specificCompanyId}`;
+        url = `http://localhost:8080/api/attendance/getSpecificAttendanceByCompanyId/${specificCompanyId}`;
       }
       
       const response = await axios.get(url);

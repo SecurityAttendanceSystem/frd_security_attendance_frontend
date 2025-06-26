@@ -16,7 +16,7 @@ const SystemUsers = () => {
       userRole: role,
     };
 
-    fetch(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/systemUser/save`, {
+    fetch(`http://localhost:8080/api/systemUser/save`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const SystemUsers = () => {
   }
 
   function fetchUsers() {
-    axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/systemUser/getAll`)
+    axios.get(`http://localhost:8080/api/systemUser/getAll`)
       .then((response) => {
         console.log("Fetched Users:", response.data);
         setUsers(response.data);

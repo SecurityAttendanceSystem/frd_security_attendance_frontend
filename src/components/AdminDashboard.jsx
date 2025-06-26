@@ -52,7 +52,7 @@ const AdminDashboard = () => {
 
   const fetchUsersDetails = () => {
     axios
-      .get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/internalUser/getUser/${userId}`)
+      .get(`http://localhost:8080/api/internalUser/getUser/${userId}`)
       .then((response) => {
         setName(response.data.name);
         setEmail(response.data.email);

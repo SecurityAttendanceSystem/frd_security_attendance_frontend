@@ -15,7 +15,7 @@ const CompanyTable = () => {
 
   function fetchCompanies() {
     axios
-      .get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/securityCompany/all`)
+      .get(`http://localhost:8080/api/securityCompany/all`)
       .then((response) => {
         console.log("Fetched Companies:", response.data); // Debugging
         setCompanies(response.data);

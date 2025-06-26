@@ -58,7 +58,7 @@ const CompanyDetails = () => {
     
     try {
       const response = await axios.post(
-        `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/securityCompany/save`,
+        `http://localhost:8080/api/securityCompany/save`,
         newCompany, // This is the data payload
         {
           headers: {

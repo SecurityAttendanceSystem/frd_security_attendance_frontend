@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/internalUser/request-reset`, null, {
+      const response = await axios.post(`http://localhost:8080/api/internalUser/request-reset`, null, {
         params: { email }
       });
       
@@ -43,7 +43,7 @@ const ForgotPassword = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/internalUser/reset-password`, null, {
+      const response = await axios.post(`http://localhost:8080/api/internalUser/reset-password`, null, {
         params: { token, newPassword }
       });
       

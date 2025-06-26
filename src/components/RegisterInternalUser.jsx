@@ -42,7 +42,7 @@ const RegisterInternalUser = () => {
   
       const response = await axios({
         method: 'post',
-        url: 'https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/internalUser/save',
+        url: 'http://localhost:8080/api/internalUser/save',
         data: JSON.stringify(newInternalUser),
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ const RegisterInternalUser = () => {
 
   function fetchRoles() {
     axios
-      .get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/systemUser/getAll`)
+      .get(`http://localhost:8080/api/systemUser/getAll`)
       .then((response) => {
         console.log("Fetched Roles:", response.data);
         setRoles(response.data);

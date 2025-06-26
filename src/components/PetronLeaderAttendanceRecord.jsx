@@ -21,7 +21,7 @@ const PatronLeaderAttendanceRecord = () => {
   const fetchAttendanceRecords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/getAll`);
+      const response = await axios.get(`http://localhost:8080/api/attendance/getAll`);
       setAttendanceRecords(response.data);
     } catch (error) {
       console.error('Error fetching attendance records:', error);

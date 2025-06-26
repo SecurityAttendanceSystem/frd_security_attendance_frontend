@@ -48,7 +48,7 @@ const AttendanceMark = () => {
 
   function fetchServiceNumbers() {
     axios
-      .get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/security-staff/getSecurityStaff/${userId}`)
+      .get(`http://localhost:8080/api/security-staff/getSecurityStaff/${userId}`)
       .then((response) => {
         const data = Array.isArray(response.data)
           ? response.data
@@ -63,7 +63,7 @@ const AttendanceMark = () => {
 
   function fetchShiftHistory(empId) {
     axios
-      .get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/getAttendanceByEmpId/${empId}`)
+      .get(`http://localhost:8080/api/attendance/getAttendanceByEmpId/${empId}`)
       .then((response) => {
         setShiftHistory(response.data || []);
       })
@@ -227,7 +227,7 @@ const AttendanceMark = () => {
       }));
 
       const response = await axios.post(
-        `https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/attendance/saveAttendance`,
+        `http://localhost:8080/api/attendance/saveAttendance`,
         attendanceData,
         { headers: { "Content-Type": "application/json" } }
       );

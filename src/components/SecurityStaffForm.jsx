@@ -23,8 +23,8 @@ const SecurityStaffForm = () => {
     const fetchData = async () => {
       try {
         const [supervisorsRes, companiesRes] = await Promise.all([
-          axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/internalUser/getAll`),
-          axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/securityCompany/all`)
+          axios.get(`http://localhost:8080/api/internalUser/getAll`),
+          axios.get(`http://localhost:8080/api/securityCompany/all`)
         ]);
         setSupervisors(supervisorsRes.data);
         setCompanies(companiesRes.data);
@@ -104,7 +104,7 @@ const SecurityStaffForm = () => {
 
       const response = await axios({
         method: 'post',
-        url: 'https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/security-staff/add',
+        url: 'http://localhost:8080/api/security-staff/add',
         data: sanitizedData,
         headers: {
           'Content-Type': 'application/json',

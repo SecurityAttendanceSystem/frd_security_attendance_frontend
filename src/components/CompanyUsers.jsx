@@ -22,7 +22,7 @@ const CompanyUser = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/securityCompany/all`);
+        const response = await axios.get(`http://localhost:8080/api/securityCompany/all`);
         setCompanies(response.data);
       } catch (error) {
         toast.error("Failed to load companies", {
@@ -89,7 +89,7 @@ const CompanyUser = () => {
 
       const response = await axios({
         method: 'post',
-        url: 'https://frdattendancemanagementsystemtestdiployment-production.up.railway.app/api/companyUser/save',
+        url: 'http://localhost:8080/api/companyUser/save',
         data: sanitizedData,
         headers: {
           'Content-Type': 'application/json',
