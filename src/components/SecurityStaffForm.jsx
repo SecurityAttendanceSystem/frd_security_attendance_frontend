@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/SecurityStaffForm.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SecurityStaffForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,8 +25,8 @@ const SecurityStaffForm = () => {
     const fetchData = async () => {
       try {
         const [supervisorsRes, companiesRes] = await Promise.all([
-          axios.get(`http://localhost:8080/api/internalUser/getAll`),
-          axios.get(`http://localhost:8080/api/securityCompany/all`)
+          axios.get(`${API_URL}/api/internalUser/getAll`),
+          axios.get(`${API_URL}/api/securityCompany/all`)
         ]);
         setSupervisors(supervisorsRes.data);
         setCompanies(companiesRes.data);
@@ -104,7 +106,7 @@ const SecurityStaffForm = () => {
 
       const response = await axios({
         method: 'post',
-        url: 'http://localhost:8080/api/security-staff/add',
+        url: `${API_URL}/api/security-staff/add`,
         data: sanitizedData,
         headers: {
           'Content-Type': 'application/json',

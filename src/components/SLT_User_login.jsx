@@ -11,6 +11,8 @@ import "../styles/Login.css";
 import logo from "../assets/logo.png";
 import MicrosoftIcon from "../assets/microsoft-icon.svg";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SLTLogin = () => {
   const { setUser } = useUser();
   const { instance } = useMsal();
@@ -37,7 +39,7 @@ const SLTLogin = () => {
       });
       
       // 4. Send token to backend
-      const res = await axios.get(`http://localhost:8080/api/user/me`, {
+      const res = await axios.get(`${API_URL}/api/user/me`, {
         headers: {
           Authorization: `Bearer ${tokenResponse.idToken || tokenResponse.accessToken}`,
         },

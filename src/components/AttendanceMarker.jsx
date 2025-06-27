@@ -6,6 +6,8 @@ import { useUser } from "./UserContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AttendanceMark = () => {
   const currentDate = new Date();
   const [serviceNumbers, setServiceNumbers] = useState([]);
@@ -48,7 +50,7 @@ const AttendanceMark = () => {
 
   function fetchServiceNumbers() {
     axios
-      .get(`http://localhost:8080/api/security-staff/getSecurityStaff/${userId}`)
+      .get(`${API_URL}/api/security-staff/getSecurityStaff/${userId}`)
       .then((response) => {
         const data = Array.isArray(response.data)
           ? response.data
@@ -63,7 +65,7 @@ const AttendanceMark = () => {
 
   function fetchShiftHistory(empId) {
     axios
-      .get(`http://localhost:8080/api/attendance/getAttendanceByEmpId/${empId}`)
+      .get(`${API_URL}/api/attendance/getAttendanceByEmpId/${empId}`)
       .then((response) => {
         setShiftHistory(response.data || []);
       })
@@ -227,7 +229,7 @@ const AttendanceMark = () => {
       }));
 
       const response = await axios.post(
-        `http://localhost:8080/api/attendance/saveAttendance`,
+        `${API_URL}/api/attendance/saveAttendance`,
         attendanceData,
         { headers: { "Content-Type": "application/json" } }
       );

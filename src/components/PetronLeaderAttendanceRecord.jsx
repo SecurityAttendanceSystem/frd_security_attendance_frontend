@@ -5,6 +5,8 @@ import '../styles/AttendanceApproval.css';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const PatronLeaderAttendanceRecord = () => {
   const { userRole } = useUser();
   const [attendanceRecords, setAttendanceRecords] = useState([]);
@@ -21,7 +23,7 @@ const PatronLeaderAttendanceRecord = () => {
   const fetchAttendanceRecords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8080/api/attendance/getAll`);
+      const response = await axios.get(`${API_URL}/api/attendance/getAll`);
       setAttendanceRecords(response.data);
     } catch (error) {
       console.error('Error fetching attendance records:', error);

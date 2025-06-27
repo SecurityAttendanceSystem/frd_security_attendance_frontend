@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import "../styles/Login.css";
 import logo from "../assets/logo.png";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CompanyUserLogin = () => {
   const { setUser } = useUser();
   const [credentials, setCredentials] = useState({
@@ -41,7 +43,7 @@ const CompanyUserLogin = () => {
     try {
       const { email, password } = credentials;
       const response = await axios.post(
-        `http://localhost:8080/api/companyUser/login`, 
+        `${API_URL}/api/companyUser/login`, 
         { userId: email, password }
       );
 

@@ -9,6 +9,8 @@ import logo from "../assets/logo.png";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AttendanceRecords = () => {
   const { userId, userRole } = useUser();
   const [attendanceRecords, setAttendanceRecords] = useState([]);
@@ -44,14 +46,14 @@ const AttendanceRecords = () => {
     try {
       setLoading(true);
       // Fetch company details for the logged-in company user
-      const response = await axios.get(`http://localhost:8080/api/companyUser/getCompanyUser/${userId}`);
+      const response = await axios.get(`${API_URL}/api/companyUser/getCompanyUser/${userId}`);
       const companyId = response.data.company.id;
       console.log(response.data)
       console.log(companyId)
       setCompanyId(companyId);
       
       // Fetch company name
-      const companyResponse = await axios.get(`http://localhost:8080/api/securityCompany/getCompany/${companyId}`);
+      const companyResponse = await axios.get(`${API_URL}/api/securityCompany/getCompany/${companyId}`);
       setCompanyName(companyResponse.data.companyName);
       console.log(companyResponse.data.companyName)
       console.log(companyResponse.data)
@@ -69,11 +71,11 @@ const AttendanceRecords = () => {
   const fetchAttendanceRecords = async (specificCompanyId = null) => {
     try {
       setLoading(true);
-      let url = `http://localhost:8080/api/attendance/getAll`;
+      let url = `${API_URL}/api/attendance/getAll`;
       
       // If we're fetching for a specific company, use a different endpoint
       if (specificCompanyId) {
-        url = `http://localhost:8080/api/attendance/getSpecificAttendanceByCompanyId/${specificCompanyId}`;
+        url = `${API_URL}/api/attendance/getSpecificAttendanceByCompanyId/${specificCompanyId}`;
       }
       
       const response = await axios.get(url);

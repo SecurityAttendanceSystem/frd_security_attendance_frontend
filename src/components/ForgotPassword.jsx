@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/forgotPassword.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +21,7 @@ const ForgotPassword = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post(`http://localhost:8080/api/internalUser/request-reset`, null, {
+      const response = await axios.post(`${API_URL}/api/internalUser/request-reset`, null, {
         params: { email }
       });
       
@@ -43,7 +45,7 @@ const ForgotPassword = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post(`http://localhost:8080/api/internalUser/reset-password`, null, {
+      const response = await axios.post(`${API_URL}/api/internalUser/reset-password`, null, {
         params: { token, newPassword }
       });
       

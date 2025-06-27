@@ -4,6 +4,8 @@ import "../styles/ViewSecurityEmployee.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ViewSecurityEmployee = () => {
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ const ViewSecurityEmployee = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/security-staff/all`);
+        const response = await axios.get(`${API_URL}/api/security-staff/all`);
         setEmployees(response.data);
         setLoading(false);
       } catch (err) {

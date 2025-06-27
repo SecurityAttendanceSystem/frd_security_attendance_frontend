@@ -26,6 +26,8 @@ import DefaultComponent from "./DefaultComponent";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const UserRole = {
   Super_Admin: "SuperAdmin",
   patrol_leader: "PatrolLeader",
@@ -52,7 +54,7 @@ const AdminDashboard = () => {
 
   const fetchUsersDetails = () => {
     axios
-      .get(`http://localhost:8080/api/internalUser/getUser/${userId}`)
+      .get(`${API_URL}/api/internalUser/getUser/${userId}`)
       .then((response) => {
         setName(response.data.name);
         setEmail(response.data.email);

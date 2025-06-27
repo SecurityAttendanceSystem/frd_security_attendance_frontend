@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/userTable.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const UserTable = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
@@ -11,7 +13,7 @@ const UserTable = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/internalUser/getAll`);
+        const response = await fetch(`${API_URL}/api/internalUser/getAll`);
         if (!response.ok) {
           throw new Error("Failed to fetch users");
         }

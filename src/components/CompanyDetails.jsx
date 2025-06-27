@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/CompanyDetails.css";
 import companyImage from "../assets/company.jpg";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CompanyDetails = () => {
   const [formData, setFormData] = useState({
     companyName: "",
@@ -58,7 +60,7 @@ const CompanyDetails = () => {
     
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/securityCompany/save`,
+        `${API_URL}/api/securityCompany/save`,
         newCompany, // This is the data payload
         {
           headers: {

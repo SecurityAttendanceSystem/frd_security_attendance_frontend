@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/CompanyUser.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CompanyUser = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,7 +24,7 @@ const CompanyUser = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/securityCompany/all`);
+        const response = await axios.get(`${API_URL}/api/securityCompany/all`);
         setCompanies(response.data);
       } catch (error) {
         toast.error("Failed to load companies", {
@@ -89,7 +91,7 @@ const CompanyUser = () => {
 
       const response = await axios({
         method: 'post',
-        url: 'http://localhost:8080/api/companyUser/save',
+        url: `${API_URL}/api/companyUser/save`,
         data: sanitizedData,
         headers: {
           'Content-Type': 'application/json',

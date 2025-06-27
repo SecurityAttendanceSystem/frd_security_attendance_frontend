@@ -4,6 +4,8 @@ import "../styles/userTable.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SecurityCompanyUsers = () => {
   // Sample User Data
   const [users, setUsers] = useState([]);
@@ -22,7 +24,7 @@ const SecurityCompanyUsers = () => {
   );
 
   function fetchSecurityCompanyUsers(){
-    axios.get(`http://localhost:8080/api/companyUser/getAll`).then((res)=>{
+    axios.get(`${API_URL}/api/companyUser/getAll`).then((res)=>{
         console.log("user fetched : ",res.data);
         setUsers(res.data);
     }).catch((err)=>{

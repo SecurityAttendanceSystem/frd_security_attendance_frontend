@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SystemUsers = () => {
   const [role, setRole] = useState("");
   const [users, setUsers] = useState([]);
@@ -16,7 +18,7 @@ const SystemUsers = () => {
       userRole: role,
     };
 
-    fetch(`http://localhost:8080/api/systemUser/save`, {
+    fetch(`${API_URL}/api/systemUser/save`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +38,7 @@ const SystemUsers = () => {
   }
 
   function fetchUsers() {
-    axios.get(`http://localhost:8080/api/systemUser/getAll`)
+    axios.get(`${API_URL}/api/systemUser/getAll`)
       .then((response) => {
         console.log("Fetched Users:", response.data);
         setUsers(response.data);

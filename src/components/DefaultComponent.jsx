@@ -5,6 +5,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const DefaultComponent = () => {
   const navigate = useNavigate();
   const [counts, setCounts] = useState({
@@ -18,9 +20,9 @@ const DefaultComponent = () => {
     const fetchCounts = async () => {
       try {
         const [internalUsers, securityCompanies, securityOfficers] = await Promise.all([
-          axios.get(`http://localhost:8080/api/internalUser/getInternalUsersCount`),
-          axios.get(`http://localhost:8080/api/securityCompany/getSecurityCompanyCount`),
-          axios.get(`http://localhost:8080/api/security-staff/getSecurityOfficersCount`)
+          axios.get(`${API_URL}/api/internalUser/getInternalUsersCount`),
+          axios.get(`${API_URL}/api/securityCompany/getSecurityCompanyCount`),
+          axios.get(`${API_URL}/api/security-staff/getSecurityOfficersCount`)
         ]);
 
         setCounts({

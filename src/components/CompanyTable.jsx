@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import "../styles/CompanyTable.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CompanyTable = () => {
   // Sample Company Data (Replace with API data if needed)
   const [companies,setCompanies] = useState([]);
@@ -15,7 +17,7 @@ const CompanyTable = () => {
 
   function fetchCompanies() {
     axios
-      .get(`http://localhost:8080/api/securityCompany/all`)
+      .get(`${API_URL}/api/securityCompany/all`)
       .then((response) => {
         console.log("Fetched Companies:", response.data); // Debugging
         setCompanies(response.data);

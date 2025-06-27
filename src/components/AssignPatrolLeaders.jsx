@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AssignPatrolLeaders = () => {
   const [users, setUsers] = useState([]);
   const [leaderAssignments, setLeaderAssignments] = useState({});
@@ -14,7 +16,7 @@ const AssignPatrolLeaders = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8080/api/internalUser/getAll`);
+      const response = await axios.get(`${API_URL}/api/internalUser/getAll`);
       setUsers(response.data);
       setLoading(false);
     } catch (error) {
@@ -55,7 +57,7 @@ const AssignPatrolLeaders = () => {
       };
 
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/assignPatrolOfficer/save`,
+        `${API_URL}/api/assignPatrolOfficer/save`,
         payload,
         {
           headers: {

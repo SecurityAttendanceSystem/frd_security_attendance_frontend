@@ -4,6 +4,8 @@ import "../styles/InternalUserLogin.css"; // Import the CSS file
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const RegisterInternalUser = () => {
   const [roles, setRoles] = useState([]);
   const [userId, setUserId] = useState("");
@@ -42,7 +44,7 @@ const RegisterInternalUser = () => {
   
       const response = await axios({
         method: 'post',
-        url: 'http://localhost:8080/api/internalUser/save',
+        url: `${API_URL}/api/internalUser/save`,
         data: JSON.stringify(newInternalUser),
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +81,7 @@ const RegisterInternalUser = () => {
 
   function fetchRoles() {
     axios
-      .get(`http://localhost:8080/api/systemUser/getAll`)
+      .get(`${API_URL}/api/systemUser/getAll`)
       .then((response) => {
         console.log("Fetched Roles:", response.data);
         setRoles(response.data);

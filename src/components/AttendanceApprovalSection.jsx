@@ -5,6 +5,8 @@ import '../styles/AttendanceApproval.css';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AttendanceApprovalSection = () => {
   const { userRole } = useUser();
   const [attendanceRecords, setAttendanceRecords] = useState([]);
@@ -23,7 +25,7 @@ const AttendanceApprovalSection = () => {
   const fetchAttendanceRecords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8080/api/attendance/getAll`);
+      const response = await axios.get(`${API_URL}/api/attendance/getAll`);
       setAttendanceRecords(response.data);
       console.log('Fetched attendance records:', response.data);
     } catch (error) {
@@ -39,7 +41,7 @@ const AttendanceApprovalSection = () => {
     try {
       if (isApproved) {
         await axios.put(
-          `http://localhost:8080/api/attendance/updateApprovalOfficer01/${recordId}`,
+          `${API_URL}/api/attendance/updateApprovalOfficer01/${recordId}`,
           'Approved',
           { headers: { 'Content-Type': 'text/plain' } }
         );
@@ -67,14 +69,14 @@ const AttendanceApprovalSection = () => {
     try {
       // First send the rejection with comment
       const rejectionResponse = await axios.put(
-        `http://localhost:8080/api/attendance/approvalOfficer01Rejected/${rejectingRecord.id}`,
+        `${API_URL}/api/attendance/approvalOfficer01Rejected/${rejectingRecord.id}`,
         { comment: rejectionComment },
         { headers: { 'Content-Type': 'application/json' } }
       );
 
       // Then update the approval status
       await axios.put(
-        `http://localhost:8080/api/attendance/updateApprovalOfficer01/${rejectingRecord.id}`,
+        `${API_URL}/api/attendance/updateApprovalOfficer01/${rejectingRecord.id}`,
         'Rejected',
         { headers: { 'Content-Type': 'text/plain' } }
       );
